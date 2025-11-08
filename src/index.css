@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 250 100% 98%;
+    --foreground: 250 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 250 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 10% 10%;
+
+    /* Instagram-inspired gradient colors */
+    --gradient-blue: 245 85% 66%;
+    --gradient-purple: 270 65% 60%;
+    --gradient-pink: 330 75% 60%;
+    --gradient-orange: 20 98% 68%;
+    --gradient-yellow: 40 100% 68%;
+
+    --primary: 245 85% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 65% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 250 20% 96%;
+    --muted-foreground: 250 10% 45%;
+
+    --accent: 330 75% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 20% 90%;
+    --input: 250 20% 90%;
+    --ring: 245 85% 66%;
+
+    --radius: 1rem;
+
+    /* Glass effect */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 250 50% 80% / 0.2;
+
+    /* Shadows */
+    --shadow-glow: 0 8px 32px hsl(245 85% 66% / 0.3);
+    --shadow-card: 0 4px 16px hsl(250 10% 10% / 0.08);
+  }
+
+  .dark {
+    --background: 250 30% 8%;
+    --foreground: 250 10% 95%;
+
+    --card: 250 25% 12%;
+    --card-foreground: 250 10% 95%;
+
+    --popover: 250 25% 12%;
+    --popover-foreground: 250 10% 95%;
+
+    --primary: 245 85% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 65% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 250 20% 16%;
+    --muted-foreground: 250 10% 60%;
+
+    --accent: 330 75% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 20% 20%;
+    --input: 250 20% 20%;
+    --ring: 245 85% 66%;
+
+    --glass-bg: 250 25% 12% / 0.7;
+    --glass-border: 250 50% 30% / 0.2;
+
+    --shadow-glow: 0 8px 32px hsl(245 85% 66% / 0.4);
+    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Gradient utilities */
+  .gradient-instagram {
+    background: linear-gradient(135deg, 
+      hsl(var(--gradient-blue)) 0%,
+      hsl(var(--gradient-purple)) 25%,
+      hsl(var(--gradient-pink)) 50%,
+      hsl(var(--gradient-orange)) 75%,
+      hsl(var(--gradient-yellow)) 100%
+    );
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, 
+      hsl(var(--primary)) 0%,
+      hsl(var(--secondary)) 100%
+    );
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, 
+      hsl(var(--secondary)) 0%,
+      hsl(var(--accent)) 100%
+    );
+  }
+
+  /* Glass morphism */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  /* Animations */
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .hover-scale:hover {
+    @apply scale-105;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-2 shadow-xl;
+  }
+
+  /* Text gradients */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+}

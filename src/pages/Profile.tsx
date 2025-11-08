@@ -145,7 +145,7 @@ ${creativeAchievements.map(a => `• ${a}`).join("\n")}
                   <div className="text-sm text-gray-600 dark:text-gray-400">Following</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">58</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">28</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">Projects</div>
                 </div>
               </div>
